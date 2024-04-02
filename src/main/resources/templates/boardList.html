@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ol>
+  <th:block th:each="board : ${boardList}">
+    <li>[[${board.title}]] ([[${board.writer ?: '익명'}]])</li>
+  </th:block>
+</ol>
+<a th:href="@{/board/write}">글 쓰기</a>
+</body>
+</html>

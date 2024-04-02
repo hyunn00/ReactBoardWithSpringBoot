@@ -23,10 +23,12 @@
 </style>
 <body>
     <div class="layout">
-        <form action="/board/write/data" method="post">
+        <form action="/board/write" method="post">
             <input type="text" name="title">
+            <input type="text" name="writer">
             <textarea name="content"></textarea>
             <button type="submit">작성</button>
+            <button type="button" onclick="location.href='/board/list'">취소</button>
         </form>
     </div>
 </body>

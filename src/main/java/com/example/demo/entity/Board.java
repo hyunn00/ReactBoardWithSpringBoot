@@ -1,6 +1,9 @@
 package com.example.demo.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,5 +20,6 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
+    private String writer;
     private String content;
 }

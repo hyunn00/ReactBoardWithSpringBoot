@@ -11,3 +11,276 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  height : 100vh;
+  width : 100%;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.Board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  padding: 5vh;
+  grid-template-rows: 1.5fr 50px 8.5fr;
+
+  & header {
+    background-color: #20b2aa;
+    border-radius: 150%;
+    width: 400px;
+    justify-self: center;
+    align-self: center;
+
+    & h1 {
+      font-size: 5vh;
+      line-height: 150%;
+      text-align: center;
+      text-transform: uppercase;
+      color: linen;
+      letter-spacing: 4px;
+      & a {
+        color : white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  & .btn-write {
+    width: 90%;
+    max-width: 800px;
+    line-height: 200%;
+    text-align: right;
+    align-self: center;
+    justify-self: center;
+
+    & a {
+      font-weight: 700;
+      font-size: 3vh;
+      color: tomato;
+      transition: color .1s ease-in;
+      -webkit-text-decoration-color: #ffa07a;
+      text-decoration-color: #ffa07a;
+    }
+  }
+  & .wrap {
+    width: 100%;
+    min-width: 600px;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    justify-self: center;
+
+    & .List {
+      display: grid;
+      grid-template: 10% 90%/5.5fr 2.5fr;
+      color: #2f4f4f;
+      overflow-y: auto;
+      width: 90%;
+      min-width: 600px;
+
+      & .header {
+        background-color: #fffacd;
+        font-size: 3vh;
+        text-align: center;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        line-height: 220%;
+        font-weight: 400;
+        border-bottom: 6px double #ffa07a;
+
+        &:nth-child(2) {
+          border-left: 1px dotted #789;
+        }
+      }
+
+      & .items {
+        grid-column: span 3;
+
+        & .ListItem {
+          display: grid;
+          grid-template-columns: 5.5fr 2.5fr;
+          font-size: 2vh;
+          width: 100%;
+          line-height: 3.5vh;
+          border-bottom: 1px dotted #20b2aa;
+          background-color: #fffacd;
+
+          & div {
+            padding: 0 10px;
+          }
+          & .title {
+            overflow: auto;
+            overflow-wrap: break-word;
+            & a {
+              text-decoration: none;
+              color : #2f4f4f;
+            }
+          }
+          & .writer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-left: 1px dotted #789;
+          }
+        }
+      }
+    }
+    & .form {
+      display: grid;
+      grid-template-rows: 1.5fr 1fr 7.5fr 1fr;
+      background-color: #fffacd;
+      color: #2f4f4f;
+      width: 90%;
+      min-width: 600px;
+
+      & .title-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 6px double #ffa07a;
+
+        & input {
+          background-color: transparent;
+          text-align: center;
+          border: none;
+          font-size: 3vh;
+          color: #2f4f4f;
+          font-family: "Courier New", Courier, monospace;
+          width: 100%;
+          padding: 20px;
+          font-weight: 700;
+        }
+      }
+
+      & .writer-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px dotted #20b2aa;
+
+        & input {
+          background-color: transparent;
+          border: none;
+          font-size: 2vh;
+          color: #2f4f4f;
+          font-family: "Courier New", Courier, monospace;
+          width: 100%;
+          padding: 20px;
+        }
+      }
+
+      & .textarea {
+        background-color: transparent;
+        font-size: 2vh;
+        color: #2f4f4f;
+        padding: 20px;
+        border: none;
+        border-bottom: 1px dotted #20b2aa;
+        font-family: "Courier New", Courier, monospace;
+        line-height: 130%;
+      }
+      & .btn-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 50px;
+        gap: 50px;
+
+        & button {
+          font-size: 3vh;
+          border : none;
+          background: transparent;
+
+          &:nth-child(1) {
+            color: tomato;
+            cursor: pointer;
+            transition: all .1s ease-in;
+          }
+
+          &:nth-child(2) {
+            color: #789;
+            cursor: pointer;
+            transition: all .1s ease-in;
+          }
+        }
+
+      }
+    }
+
+    & .detail {
+      display: grid;
+      grid-template: 1fr 0.7fr 6fr 1fr / 1fr;
+      align-items: center;
+      text-align: center;
+      background-color: #fffacd;
+      color: #2f4f4f;
+      font-size: 2vh;
+      overflow: hidden;
+      width: 90%;
+      min-width: 600px;
+
+      & .title {
+        height: 100%;
+        overflow-wrap: break-word;
+
+        & h2 {
+          font-size: 3vh;
+          margin: 0;
+          padding: 20px 10px;
+          border-bottom: 6px double #ffa07a;
+        }
+      }
+      & .writer {
+        height: 100%;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        border-bottom: 1px dotted #20b2aa;
+        text-align: left;
+        line-height: 130%;
+        padding : 0 20px;
+      }
+
+      & .content {
+        height: 100%;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        border-bottom: 1px dotted #20b2aa;
+        text-align: left;
+        line-height: 130%;
+        padding-left : 20px;
+        font-size: 2vh;
+      }
+
+      & .btn-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 50px;
+        gap: 50px;
+
+        & a {
+          font-size: 3vh;
+          border : none;
+          background: transparent;
+
+          &:nth-child(1) {
+            color: tomato;
+            cursor: pointer;
+            transition: all .1s ease-in;
+          }
+
+          &:nth-child(2) {
+            color: #789;
+            cursor: pointer;
+            transition: all .1s ease-in;
+          }
+        }
+      }
+    }
+  }
+}
+
